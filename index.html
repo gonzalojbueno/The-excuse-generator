@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>The Excuse Generator</title>
+</head>
+<body>
+
+<div class="container-fluid text-center">
+
+<h1 class="mt-5">OMG You will not believe me but...</h1>
+<h1 class="mt-5" id="the-excuse">My dog eat my food</h1>
+<button id="btn">Generate New Excuse</button>
+
+</div>
+
+
+
+
+
+
+<script>
+window.onload = () => {
+
+   //let randomNumber = Math.random() * 10;
+   document.querySelector("#btn").addEventListener("click", () =>{
+    document.querySelector("#the-excuse").innerHTML = generateExcuse(); // 1) poner randomNumber en el DOM   
+   })
+    
+    console.log("Hello Rigo from the console!");
+};
+
+    let generateExcuse = () => { //2) call the function on line 29
+
+        // 3) split the problem on different parts
+        let pronoum = ["A", "The"];
+        let subject = ["jogger", "racoon" , "dog" , "driver" , "comedian" , "pincone"];
+        let action = ["took my" , "threw my" , "yelled at my", "stole my" , "bit my"];
+        let possetion = ["homework" , "toe" , "car" , "shoe"];
+        let where = ["on the street" , "in my house" , "in my driveway"];
+
+        let proIndx = Math.floor(Math.random() * pronoum.length);
+        let subjIndx = Math.floor(Math.random() * subject.length);
+        let actionIndex = Math.floor(Math.random() * action.length);
+        let possetionIndex = Math.floor(Math.random() * possetion.length);
+        let whereIndex = Math.floor(Math.random() * where.length);
+
+        return pronoum[proIndx] + " " + subject[subjIndx] + " " + action[actionIndex] +" "+ possetion[possetionIndex] + " " + where[whereIndex];
+    };
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
